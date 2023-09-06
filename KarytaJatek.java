@@ -4,23 +4,34 @@ import java.util.Scanner;
 
 public class KarytaJatek {
 
+    static String[] pakli = new String[22];
+
     public static void main(String[] args) {
         jatek();
+       
     }
 
     private static void jatek() {
         for (int i = 0; i < 3; i++) {
+            
             kirak();
             melyik();
             kever();
         }
-        ezvolt();
+        //ezvolt(kirak()[10]);
     }
 
-    private static int[] kirak() {
-        int[] kartyak = new int[21];
+    private static String[] kirak() {
+        String[] szinek = {"P", "T", "Z", "M"};
+        String[] ertekek = {"Asz", "Kir", "Fel", "X", "IX", "VIII"};
 
-        return kartyak;
+        for (int i = 0; i < pakli.length; i++) {
+            pakli[i] = szinek[i/6] + " - " + ertekek[i% 6];
+        }
+        for (int i = 0; i < pakli.length; i++) {
+            System.out.println(pakli[i]);
+        }
+        return pakli;
     }
 
     private static int melyik() {
@@ -39,8 +50,8 @@ public class KarytaJatek {
 
     }
 
-    private static void ezvolt() {
-        
+    private static void ezvolt(String eredmeny) {
+        System.out.printf("Ez volt az általad kiválasztott lap?: " + eredmeny);
     }
 
 }

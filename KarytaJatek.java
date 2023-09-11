@@ -17,8 +17,8 @@ public class KarytaJatek {
             kirak();
             System.out.println();
             System.out.println("");
-            melyik();
-            kever();
+            kever(melyik());
+            
            
         }
         
@@ -53,17 +53,37 @@ public class KarytaJatek {
             System.out.print("Meliyk sorba van a választott lapod[1-3]?: ");
             valasz = sc.nextInt();
         }
-       
+ 
         return valasz;
 
     }
 
-    private static void kever() {
-        
+    private static void kever( int valaszt) {
+        switch (valaszt) {
+            case 1:
+                for (int i = 1; i < 7; i++) {
+                    pakli[i]=pakli[19-((i-1)*3)];
+                    pakli[i+7]=pakli[18-((i-1)*3)];
+                    pakli[i+14]=pakli[20-((i-1)*3)];  
+                }
+                
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                for (int i = 1; i < 7; i++) {
+                    pakli[i]=pakli[20-(i-1)*3];
+                    pakli[i+7]=pakli[19-(i-1)*3];
+                    pakli[i+14]=pakli[18-(i-1)*3];  
+                }
+                break;
+        }
     }
 
     private static void ezvolt(String eredmeny) {
         System.out.printf("\n\n"+"Ez volt az általad kiválasztott lap?: " + eredmeny+"\n");
+        
     }
 
 }

@@ -49,7 +49,7 @@ public class KarytaJatek {
         Scanner sc = new Scanner(System.in);
         int valasz = 0;
         while ((valasz < 1) || (valasz > 3)) {
-            System.out.print("Meliyk sorba van a választott lapod[1-3]?: ");
+            System.out.print("Meliyk sorba van a választott lapod [1-3]?: ");
             valasz = sc.nextInt();
         }
         System.out.println(valasz);

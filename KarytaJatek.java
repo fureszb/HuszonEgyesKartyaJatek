@@ -2,21 +2,24 @@ package karytajatek;
 
 import java.util.Scanner;
 
-public class KarytaJatek {
+public class Karytajatek {
 
-    static String[] pakli = new String[22];
+    static String[] pakli = new String[21];
 
     public static void main(String[] args) {
         jatek();
-       
+
     }
 
     private static void jatek() {
         for (int i = 0; i < 3; i++) {
-            
+
             kirak();
+            System.out.println();
+            System.out.println("");
             melyik();
             kever();
+           
         }
         //ezvolt(kirak()[10]);
     }
@@ -26,10 +29,18 @@ public class KarytaJatek {
         String[] ertekek = {"Asz", "Kir", "Fel", "X", "IX", "VIII"};
 
         for (int i = 0; i < pakli.length; i++) {
-            pakli[i] = szinek[i/6] + " - " + ertekek[i% 6];
+            pakli[i] = szinek[i / 6] + " - " + ertekek[i % 6];
         }
+        int db =0;
         for (int i = 0; i < pakli.length; i++) {
-            System.out.println(pakli[i]);
+       
+            if (db == 3) {
+                System.out.printf("\n"); 
+                db =0;
+            }
+            db++;
+            System.out.printf(pakli[i]+"\t"+" | ");
+           
         }
         return pakli;
     }

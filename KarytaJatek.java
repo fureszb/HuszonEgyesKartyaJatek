@@ -2,7 +2,7 @@ package karytajatek;
 
 import java.util.Scanner;
 
-public class Karytajatek {
+public class KarytaJatek {
 
     static String[] pakli = new String[21];
 
@@ -39,7 +39,7 @@ public class Karytajatek {
                 db =0;
             }
             db++;
-            System.out.printf(pakli[i]+"\t"+" | ");
+            System.out.printf(pakli[i]+"\t"+"\t");
            
         }
         return pakli;

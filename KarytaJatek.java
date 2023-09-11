@@ -17,11 +17,10 @@ public class KarytaJatek {
             kirak();
             System.out.println();
             System.out.println("");
-            melyik();
-            kever();
-           
+            kever(melyik());
+
         }
-        
+
         ezvolt(kirak()[10]);
     }
 
@@ -32,16 +31,16 @@ public class KarytaJatek {
         for (int i = 0; i < pakli.length; i++) {
             pakli[i] = szinek[i / 6] + " - " + ertekek[i % 6];
         }
-        int db =0;
+        int db = 0;
         for (int i = 0; i < pakli.length; i++) {
-       
+
             if (db == 3) {
-                System.out.printf("\n"); 
-                db =0;
+                System.out.printf("\n");
+                db = 0;
             }
             db++;
-            System.out.printf(pakli[i]+"\t"+"\t");
-           
+            System.out.printf(pakli[i] + "\t" + "\t");
+
         }
         return pakli;
     }
@@ -53,17 +52,28 @@ public class KarytaJatek {
             System.out.print("Meliyk sorba van a választott lapod[1-3]?: ");
             valasz = sc.nextInt();
         }
-       
+
         return valasz;
 
     }
 
-    private static void kever() {
-        
+    private static void kever(int vlaszt) {
+        switch (vlaszt) {
+
+            case 2:
+
+                for (int i = 0; i < 6; i++) {
+                    pakli[i] = pakli[19 - (i - 1) * 3];
+                    pakli[i + 6] = pakli[20 - (i - 1) * 3];
+                    pakli[i + 13] = pakli[21 - (i - 1) * 3];
+                }
+
+                break;
+        }
     }
 
     private static void ezvolt(String eredmeny) {
-        System.out.printf("\n\n"+"Ez volt az általad kiválasztott lap?: " + eredmeny+"\n");
+        System.out.printf("\n\n" + "Ez volt az általad kiválasztott lap?: " + eredmeny + "\n");
     }
 
 }

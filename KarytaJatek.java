@@ -56,39 +56,40 @@ public class KarytaJatek {
 
     }
 
-    private static void kever( int valaszt) {
+    private static void kever(int valaszt) {
         switch (valaszt) {
+
             case 1:
                 for (int i = 1; i < 7; i++) {
-                    pakli[i]=pakli[19-((i-1)*3)];
-                    pakli[i+7]=pakli[18-((i-1)*3)];
-                    pakli[i+14]=pakli[20-((i-1)*3)];  
+                    pakli[i] = pakli[19 - ((i - 1) * 3)];
+                    pakli[i + 7] = pakli[18 - ((i - 1) * 3)];
+                    pakli[i + 14] = pakli[20 - ((i - 1) * 3)];
                 }
-                
+
                 break;
-            case 3:
-                for (int i = 1; i < 7; i++) {
-                    pakli[i]=pakli[20-(i-1)*3];
-                    pakli[i+7]=pakli[19-(i-1)*3];
-                    pakli[i+14]=pakli[18-(i-1)*3];  
-                }
-                break;
+
             case 2:
 
-                for (int i = 0; i < 6; i++) {
-                    pakli[i] = pakli[19 - (i - 1) * 3];
-                    pakli[i + 6] = pakli[20 - (i - 1) * 3];
-                    pakli[i + 13] = pakli[21 - (i - 1) * 3];
+                for (int i = 1; i < 7; i++) {
+                    pakli[i] = pakli[18 - (i - 1) * 3];
+                    pakli[i + 7] = pakli[19 - (i - 1) * 3];
+                    pakli[i + 14] = pakli[20 - (i - 1) * 3];
                 }
 
+                break;
 
+            case 3:
+                for (int i = 1; i < 7; i++) {
+                    pakli[i] = pakli[20 - (i - 1) * 3];
+                    pakli[i + 7] = pakli[19 - (i - 1) * 3];
+                    pakli[i + 14] = pakli[18 - (i - 1) * 3];
+                }
                 break;
         }
     }
 
     private static void ezvolt(String eredmeny) {
-        System.out.printf("\n\n"+"Ez volt az általad kiválasztott lap?: " + eredmeny+"\n");
-        
+        System.out.printf("\n\n" + "Ez volt az általad kiválasztott lap?: " + eredmeny + "\n");
 
     }
 }

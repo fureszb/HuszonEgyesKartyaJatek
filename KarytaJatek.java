@@ -53,13 +53,13 @@ public class KarytaJatek {
             System.out.print("Meliyk sorba van a választott lapod[1-3]?: ");
             valasz = sc.nextInt();
         }
-        System.out.println(valasz);
+       
         return valasz;
 
     }
 
     private static void kever() {
-
+        
     }
 
     private static void ezvolt(String eredmeny) {

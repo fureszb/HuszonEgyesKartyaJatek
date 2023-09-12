@@ -5,8 +5,12 @@ import java.util.Scanner;
 public class KarytaJatek {
 
     static String[] pakli = new String[21];
+    static String[] t1 = new String[7];
+    static String[] t2 = new String[7];
+    static String[] t3 = new String[7];
 
     public static void main(String[] args) {
+        kirak();
         jatek();
 
     }
@@ -14,14 +18,13 @@ public class KarytaJatek {
     private static void jatek() {
         for (int i = 0; i < 3; i++) {
 
-            kirak();
             System.out.println();
             System.out.println("");
             kever(melyik());
 
         }
 
-        ezvolt(kirak()[10]);
+        ezvolt(pakli[10]);
     }
 
     private static String[] kirak() {
@@ -56,39 +59,50 @@ public class KarytaJatek {
 
     }
 
-    private static void kever( int valaszt) {
+    private static void kever(int valaszt) {
+
         switch (valaszt) {
             case 1:
-                for (int i = 1; i < 7; i++) {
-                    pakli[i]=pakli[19-((i-1)*3)];
-                    pakli[i+7]=pakli[18-((i-1)*3)];
-                    pakli[i+14]=pakli[20-((i-1)*3)];  
+                for (int i = 0; i < t1.length; i++) {
+                    t1[i] = pakli[19 - ((i) * 3)];
+                    t2[i] = pakli[18 - ((i) * 3)];
+                    t3[i] = pakli[20 - ((i) * 3)];
                 }
-                
-                break;
-            case 3:
-                for (int i = 1; i < 7; i++) {
-                    pakli[i]=pakli[20-(i-1)*3];
-                    pakli[i+7]=pakli[19-(i-1)*3];
-                    pakli[i+14]=pakli[18-(i-1)*3];  
+                for (int i = 0; i < t1.length; i++) {
+                    System.out.printf("%-10s  %-10s  %5s", t1[i], t2[i], t3[i] + "\n");
                 }
                 break;
             case 2:
-
-                for (int i = 0; i < 6; i++) {
-                    pakli[i] = pakli[19 - (i - 1) * 3];
-                    pakli[i + 6] = pakli[20 - (i - 1) * 3];
-                    pakli[i + 13] = pakli[21 - (i - 1) * 3];
+                for (int i = 0; i < t1.length; i++) {
+                    t1[i] = pakli[18 - ((i) * 3)];
+                    t2[i] = pakli[19 - ((i) * 3)];
+                    t3[i] = pakli[20 - ((i) * 3)];
                 }
-
-
+                for (int i = 0; i < t1.length; i++) {
+                    System.out.printf("%-10s  %-10s  %5s", t1[i], t2[i], t3[i] + "\n");
+                }
                 break;
+            case 3:
+                for (int i = 0; i < t1.length; i++) {
+                    t1[i] = pakli[20 - ((i) * 3)];
+                    t2[i] = pakli[19 - ((i) * 3)];
+                    t3[i] = pakli[18 - ((i) * 3)];
+                }
+                for (int i = 0; i < t1.length; i++) {
+                    System.out.printf("%-10s  %-10s  %5s", t1[i], t2[i], t3[i] + "\n");
+                }
+                break;
+
         }
     }
 
     private static void ezvolt(String eredmeny) {
-        System.out.printf("\n\n"+"Ez volt az általad kiválasztott lap?: " + eredmeny+"\n");
-        
+        for (int i = 0; i < t1.length; i++) {
+            pakli[19 - ((i) * 3)] = t1[i];
+            pakli[18 - ((i) * 3)] = t2[i];
+            pakli[20 - ((i) * 3)] = t3[i];
+        }
+        System.out.printf("\n\n" + "Ez volt az általad kiválasztott lap?: " + eredmeny + "\n");
 
     }
 }

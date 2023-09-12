@@ -60,8 +60,8 @@ public class KarytaJatek {
     }
 
     private static void kever(int valaszt) {
-
         switch (valaszt) {
+
             case 1:
                 for (int i = 0; i < t1.length; i++) {
                     t1[i] = pakli[19 - ((i) * 3)];
@@ -81,6 +81,7 @@ public class KarytaJatek {
                 for (int i = 0; i < t1.length; i++) {
                     System.out.printf("%-10s  %-10s  %5s", t1[i], t2[i], t3[i] + "\n");
                 }
+
                 break;
             case 3:
                 for (int i = 0; i < t1.length; i++) {
@@ -102,6 +103,7 @@ public class KarytaJatek {
             pakli[18 - ((i) * 3)] = t2[i];
             pakli[20 - ((i) * 3)] = t3[i];
         }
+
         System.out.printf("\n\n" + "Ez volt az általad kiválasztott lap?: " + eredmeny + "\n");
 
     }

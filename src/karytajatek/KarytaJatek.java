@@ -93,16 +93,15 @@ public class KarytaJatek {
                     System.out.printf("%-10s  %-10s  %5s", t1[i], t2[i], t3[i] + "\n");
                 }
                 break;
-
+        }
+        for (int i = 0; i < t1.length; i++) {
+            pakli[i] = t1[i];
+            pakli[i + 7] = t2[i];
+            pakli[i + 14] = t3[i];
         }
     }
 
     private static void ezvolt(String eredmeny) {
-        for (int i = 0; i < t1.length; i++) {
-            pakli[19 - ((i) * 3)] = t1[i];
-            pakli[18 - ((i) * 3)] = t2[i];
-            pakli[20 - ((i) * 3)] = t3[i];
-        }
 
         System.out.printf("\n\n" + "Ez volt az általad kiválasztott lap?: " + eredmeny + "\n");
 
